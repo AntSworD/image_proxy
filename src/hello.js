@@ -7,7 +7,7 @@ const get = new Api();
 get.use(async function(ctx) {
   let image = 'R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=';
 
-  ctx.headers['Content-Type'] = 'image/png';
+  ctx.setHeader('Content-Type', 'image/png');
   ctx.body = Buffer.from(image, 'base64');
 });
 
