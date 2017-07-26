@@ -5,10 +5,9 @@ const Api = apiGateWay.Api;
 const get = new Api();
 
 get.use(async function(ctx) {
-  let image = 'R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=';
-
   ctx.setHeaders('Content-Type', 'image/png');
-  ctx.body = Buffer.from(image, 'base64');
+  ctx.body = 'R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=';
+  ctx.res.encoding = 'base64';
 });
 
 exports.get = get.wrap();
