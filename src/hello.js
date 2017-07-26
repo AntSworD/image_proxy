@@ -29,9 +29,10 @@ get.use(async function(ctx) {
   if (!buffer) {
     throw ctx.newError(404, 'buffer 为空');
   }
-  let type = fileType(buffer);
+  let type = fileType(buffer.slice(0, 4100));
 
   if (!type || MIME_WHITELIST.indexOf(type.mime) === -1) {
+    console.log(type);
     throw ctx.newError(404, '图片格式有误');
   }
 
