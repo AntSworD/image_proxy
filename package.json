@@ -1,0 +1,25 @@
+{
+  "name": "image_proxy",
+  "version": "0.0.1",
+  "author": "AntSworD <zhengjj.asd@gmail.com>",
+  "description": "Image proxy",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "babel src -d es5 --source-maps --copy-files",
+    "test": "ava test"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.5.2",
+    "source-map-support": "^0.4.15",
+    "ava": "^0.19.1"
+  },
+  "dependencies": {
+    "ali-api-gateway": "^1.0.4"
+  }
+}
