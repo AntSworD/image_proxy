@@ -23,7 +23,7 @@ get.use(async function(ctx) {
   if (dataUri.indexOf('data:') === 0) {
     buffer = dataUriToBuffer(dataUri);
   } else {
-    buffer = urllib.request(dataUri).then(res => res.data).catch(e => null);
+    buffer = await urllib.request(dataUri).then(res => res.data).catch(() => null);
   }
 
   if (!buffer) {
